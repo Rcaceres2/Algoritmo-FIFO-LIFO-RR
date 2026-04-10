@@ -10,12 +10,12 @@ const int MAX_PROCESOS = 50;
 struct Proceso
 {
     string nombre;
-    int ti;   
-    int t;    
-    int tf;   
-    int T;    
-    int E;    
-    double I;
+    int ti;   // Tiempo de inicio
+    int t;    // Tiempo de ejecucion
+    int tf;   // Tiempo final
+    int T;    // Tiempo de servicio
+    int E;    // Tiempo de espera
+    double I; // Indice de servicio
 };
 
 #endif
