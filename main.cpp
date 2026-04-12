@@ -34,19 +34,19 @@ int main()
     entrada.close();
 
     ofstream f_out("resultados.txt");
-    double resultados_T[3];
+    double resultados_I[3];
     string nombres[] = {"FIFO", "LIFO", "RR"};
 
     ejecutar_fifo(base, n);
-    calcular_y_mostrar(nombres[0], base, n, resultados_T[0], f_out);
+    calcular_y_mostrar(nombres[0], base, n, resultados_I[0], f_out);
 
     ejecutar_lifo(base, n);
-    calcular_y_mostrar(nombres[1], base, n, resultados_T[1], f_out);
+    calcular_y_mostrar(nombres[1], base, n, resultados_I[1], f_out);
 
     ejecutar_rr(base, n, 4);
-    calcular_y_mostrar(nombres[2], base, n, resultados_T[2], f_out);
+    calcular_y_mostrar(nombres[2], base, n, resultados_I[2], f_out);
 
-    comparar_solo_T(resultados_T, nombres, 3, f_out);
+    comparar_solo_I(resultados_I, nombres, 3, f_out);
 
     f_out.close();
     return 0;
