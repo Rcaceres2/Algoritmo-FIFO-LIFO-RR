@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void calcular_y_mostrar(string nombre, Proceso lista[], int n, double &pT_out, ofstream &archivo)
+void calcular_y_mostrar(string nombre, Proceso lista[], int n, double &pI_out, ofstream &archivo)
 {
     double sumaT = 0, sumaE = 0, sumaI = 0;
 
@@ -29,7 +29,7 @@ void calcular_y_mostrar(string nombre, Proceso lista[], int n, double &pT_out, o
     double pE = sumaE / n;
     double pI = (sumaI / n) * 100;
 
-    pT_out = pT;
+    pI_out = pI;
 
     string tabla = "\n Algoritmo: " + nombre + "\n";
     tabla += "================================================\n";
@@ -58,18 +58,18 @@ void calcular_y_mostrar(string nombre, Proceso lista[], int n, double &pT_out, o
         archivo << tabla;
 }
 
-void comparar_solo_T(double pTs[], string nombres[], int cant, ofstream &archivo)
+void comparar_solo_I(double pIs[], string nombres[], int cant, ofstream &archivo)
 {
     string res = "\n--- Comparacion ---\n";
     int mejor_idx = 0;
-    double min_T = pTs[0];
+    double min_I = pIs[0];
 
     for (int i = 0; i < cant; i++)
     {
-        res += nombres[i] + ": " + to_string(pTs[i]).substr(0, 5) + "\n";
-        if (pTs[i] < min_T)
+        res += nombres[i] + ": " + to_string(pIs[i]).substr(0, 5) + "%\n";
+        if (pIs[i] < min_I)
         {
-            min_T = pTs[i];
+            min_I = pIs[i];
             mejor_idx = i;
         }
     }
